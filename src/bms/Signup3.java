@@ -149,6 +149,8 @@ public class Signup3 extends JFrame implements ActionListener {
 
         cancel.addActionListener(this);
         submit.addActionListener(this);
+
+        setUndecorated(false);
     }
 
     public static void main(String[] args) {

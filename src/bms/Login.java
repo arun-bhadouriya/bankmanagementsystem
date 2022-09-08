@@ -12,7 +12,8 @@ public class Login extends JFrame implements ActionListener {
     JTextField cardInput,pinInput;
     Login(){
         setTitle("BMS");
-        setSize(800,480);
+        setSize(700,400);
+        setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         logo = new ImageIcon(ClassLoader.getSystemResource("icon/logo.jpg"));
@@ -69,11 +70,12 @@ public class Login extends JFrame implements ActionListener {
         pinInput.setFont(new Font("Arial",Font.BOLD,15));
         add(pinInput);
         add(cardInput);
+
+        setUndecorated(false);
     }
-    static Login x;
+
     public static void main(String[] args) {
-        x = new Login();
-        x.setVisible(true);
+        new Login().setVisible(true);
     }
 
     @Override
@@ -83,7 +85,7 @@ public class Login extends JFrame implements ActionListener {
             pinInput.setText("");
         }
         else if(e.getSource()==signUp){
-            x.setVisible(false);
+            setVisible(false);
             new Signup1().setVisible(true);
         }
         else if(e.getSource()==logIn){

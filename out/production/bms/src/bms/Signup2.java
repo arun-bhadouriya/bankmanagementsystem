@@ -24,6 +24,7 @@ public class Signup2 extends JFrame implements ActionListener {
         setResizable(false);
         setLocationRelativeTo(null);
         getContentPane().setBackground(Color.WHITE);
+        setUndecorated(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Registration Form");
 
