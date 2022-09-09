@@ -121,7 +121,7 @@ public class FastCash extends JFrame implements ActionListener {
                 return;
             }
 
-            String q ="INSERT INTO bank VALUES('"+pinnumber+"','"+date+"','"+type+"','"+amt+"')";
+            String q ="INSERT INTO bank(pin,date,type,amount) VALUES('"+pinnumber+"','"+date+"','"+type+"','"+amt+"')";
             c.s.executeUpdate(q);
             c.con.close();
             JOptionPane.showMessageDialog(null,"Debited Successfully");

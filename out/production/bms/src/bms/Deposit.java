@@ -71,16 +71,17 @@ public class Deposit extends JFrame implements ActionListener {
 
             if(amt.equals("")){
                 JOptionPane.showMessageDialog(null,"Please Enter the amount you need to deposit");
+                return;
             }
 
             Conn c = new Conn();
             try{
-                String q ="INSERT INTO bank VALUES('"+pinnumber+"','"+date+"','"+type+"','"+amt+"')";
+                String q ="INSERT INTO bank(pin,date,type,amount) VALUES('"+pinnumber+"','"+date+"','"+type+"','"+amt+"')";
                 c.s.executeUpdate(q);
                 JOptionPane.showMessageDialog(null,"Rs."+amt+" Deposited Successfully");
+                c.con.close();
                 setVisible(false);
                 new Transaction(pinnumber).setVisible(true);
-                c.con.close();
             }
             catch(Exception exc){
                 System.out.println(exc);
